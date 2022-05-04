@@ -1,3 +1,5 @@
 Python >= 3.6.9
 Flask >= 2.0.3
 Werkzeug >= 2.0.3
+beautifulsoup4 >= 4.11.1
+
