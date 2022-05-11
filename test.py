@@ -6,7 +6,8 @@ def test_logger():
     :return: test result.
     :rtype: bool
     """
-    from src import mylogger
+    from practice.src import mylogger
+
     try:
         m = mylogger.get_logger('test', '/home/upright/practice/log')
         m.debug('hi, debug')
@@ -22,7 +23,7 @@ def test_config():
     :rtype: bool
     """
     
-    from src import myconfig
+    from practice.src import myconfig
     try:
         m = myconfig.get_config('/home/upright/practice/share/test.config')
         print('key=1', m['general'].get('key1'))

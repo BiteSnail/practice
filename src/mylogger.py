@@ -24,9 +24,10 @@ def get_logger(name, log_directory='', log_to_stream=True):
         file_handler.suffix = "%Y%m%d%h%m"
         file_handler.setLevel(logging.DEBUG)
         logger.addHandler(file_handler)
-        if log_to_stream:
-            stream_handler = logging.StreamHandler()
-            stream_handler.setFormatter(formatter)
-            stream_handler.setLevel(logging.DEBUG)
-            logger.addHandler(stream_handler)
-            return logger
+    if log_to_stream:
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        stream_handler.setLevel(logging.DEBUG)
+        logger.addHandler(stream_handler)
+    
+    return logger

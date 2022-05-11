@@ -2,7 +2,7 @@ import os
 from bs4 import BeautifulSoup
 import requests
 import datetime
-from src import mylogger, myconfig
+from practice.src import mylogger, myconfig
 import pdb
 
 def crawl_stock(logger, market='kospi', limit=60):
@@ -48,9 +48,8 @@ def crawl_stock(logger, market='kospi', limit=60):
     return stocks
 
 if __name__ == '__main__':
-    project_root_path = "/home/upright/practice/"
+    project_root_path = os.getenv("PRACTICE")
     cfg = myconfig.get_config('{}/share/project.config'.format(project_root_path))
-    #print('{}/share/project.config'.format(project_root_path))
     log_path = cfg['logger'].get('log_directory')
     print("log path:",log_path)
     logger = mylogger.get_logger(log_path)
